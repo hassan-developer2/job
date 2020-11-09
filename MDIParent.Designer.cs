@@ -43,14 +43,16 @@
             this.jobApplyDetailReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyProfileReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.processingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.interviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.questionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initializeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.questionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkLabelClose = new System.Windows.Forms.LinkLabel();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.processingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.interviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.abouTheDeveloperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabelClose2 = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +74,8 @@
             this.jobToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.initalizeToolStripMenuItem,
             this.processingToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.abouTheDeveloperToolStripMenuItem});
             this.jobToolStripMenuItem.Name = "jobToolStripMenuItem";
             this.jobToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
             this.jobToolStripMenuItem.Text = "job";
@@ -84,7 +87,7 @@
             this.companyProfileToolStripMenuItem,
             this.jobToolStripMenuItem1});
             this.initalizeToolStripMenuItem.Name = "initalizeToolStripMenuItem";
-            this.initalizeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.initalizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.initalizeToolStripMenuItem.Text = "initalize";
             // 
             // jobTypeToolStripMenuItem
@@ -113,7 +116,7 @@
             this.processingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applyJobToolStripMenuItem});
             this.processingToolStripMenuItem.Name = "processingToolStripMenuItem";
-            this.processingToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.processingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.processingToolStripMenuItem.Text = "processing";
             // 
             // applyJobToolStripMenuItem
@@ -131,7 +134,7 @@
             this.jobApplyDetailReportToolStripMenuItem,
             this.companyProfileReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportsToolStripMenuItem.Text = "reports";
             // 
             // jobApplyDetailReportToolStripMenuItem
@@ -155,6 +158,21 @@
             this.interviewToolStripMenuItem.Name = "interviewToolStripMenuItem";
             this.interviewToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.interviewToolStripMenuItem.Text = "interview";
+            // 
+            // processingToolStripMenuItem1
+            // 
+            this.processingToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.interviewToolStripMenuItem1});
+            this.processingToolStripMenuItem1.Name = "processingToolStripMenuItem1";
+            this.processingToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.processingToolStripMenuItem1.Text = "processing";
+            // 
+            // interviewToolStripMenuItem1
+            // 
+            this.interviewToolStripMenuItem1.Name = "interviewToolStripMenuItem1";
+            this.interviewToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.interviewToolStripMenuItem1.Text = "interview";
+            this.interviewToolStripMenuItem1.Click += new System.EventHandler(this.interviewToolStripMenuItem1_Click);
             // 
             // questionsToolStripMenuItem
             // 
@@ -190,6 +208,12 @@
             this.linkLabelClose.Text = "Close";
             this.linkLabelClose.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelClose_LinkClicked);
             // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Text = "Status";
+            // 
             // statusStrip
             // 
             this.statusStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statusStrip.BackgroundImage")));
@@ -202,33 +226,30 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // toolStripStatusLabel
+            // abouTheDeveloperToolStripMenuItem
             // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel.Text = "Status";
+            this.abouTheDeveloperToolStripMenuItem.Name = "abouTheDeveloperToolStripMenuItem";
+            this.abouTheDeveloperToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abouTheDeveloperToolStripMenuItem.Text = "about the developer";
+            this.abouTheDeveloperToolStripMenuItem.Click += new System.EventHandler(this.abouTheDeveloperToolStripMenuItem_Click);
             // 
-            // processingToolStripMenuItem1
+            // linkLabelClose2
             // 
-            this.processingToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.interviewToolStripMenuItem1});
-            this.processingToolStripMenuItem1.Name = "processingToolStripMenuItem1";
-            this.processingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.processingToolStripMenuItem1.Text = "processing";
-            // 
-            // interviewToolStripMenuItem1
-            // 
-            this.interviewToolStripMenuItem1.Name = "interviewToolStripMenuItem1";
-            this.interviewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.interviewToolStripMenuItem1.Text = "interview";
-            this.interviewToolStripMenuItem1.Click += new System.EventHandler(this.interviewToolStripMenuItem1_Click);
+            this.linkLabelClose2.AutoSize = true;
+            this.linkLabelClose2.Location = new System.Drawing.Point(504, 10);
+            this.linkLabelClose2.Name = "linkLabelClose2";
+            this.linkLabelClose2.Size = new System.Drawing.Size(58, 13);
+            this.linkLabelClose2.TabIndex = 7;
+            this.linkLabelClose2.TabStop = true;
+            this.linkLabelClose2.Text = "CLose app";
+            this.linkLabelClose2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelClose2_LinkClicked);
             // 
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
-            this.Controls.Add(this.linkLabelClose);
+            this.Controls.Add(this.linkLabelClose2);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -247,8 +268,6 @@
 
         }
         #endregion
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem jobToolStripMenuItem;
@@ -268,6 +287,10 @@
         private System.Windows.Forms.ToolStripMenuItem questionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem processingToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem interviewToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripMenuItem abouTheDeveloperToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLabelClose2;
     }
 }
 

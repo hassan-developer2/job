@@ -164,5 +164,22 @@ namespace job
             FrmInterview frmInterview = new FrmInterview();
             frmInterview.Show();
         }
+
+        private void contactUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 about = new AboutBox1();
+            about.ShowDialog();
+        }
+
+        private void abouTheDeveloperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 about = new AboutBox1();
+            about.Show();
+        }
+
+        private void linkLabelClose2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -82,8 +82,9 @@ namespace job
                                    select s;
                 if (queryResults.Any())
                 {
-                    MessageBox.Show("id already exists");
-                    return;
+                   // MessageBox.Show("id already exists");
+                    // return;
+                    goto childTable;
                 }
                 else
                 {
@@ -99,6 +100,7 @@ namespace job
 
                 }
                 #endregion
+                childTable:
                 interviewDetail.InterviewId = cboId.Text;
                 interviewDetail.QuestionId =(int) cboQuestion.SelectedValue;
                 interviewDetail.Question = cboQuestion.Text;
