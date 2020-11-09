@@ -247,6 +247,7 @@
             // dataGridViewQuestion
             // 
             this.dataGridViewQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQuestion.ContextMenuStrip = this.contextMenuStripDelete;
             this.dataGridViewQuestion.Location = new System.Drawing.Point(100, 483);
             this.dataGridViewQuestion.Name = "dataGridViewQuestion";
             this.dataGridViewQuestion.Size = new System.Drawing.Size(603, 189);
@@ -255,6 +256,7 @@
             // notifyIconRightClick
             // 
             this.notifyIconRightClick.ContextMenuStrip = this.contextMenuStripDelete;
+            this.notifyIconRightClick.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconRightClick.Icon")));
             this.notifyIconRightClick.Text = "notifyIcon1";
             this.notifyIconRightClick.Visible = true;
             // 
@@ -263,14 +265,14 @@
             this.contextMenuStripDelete.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemDelete});
             this.contextMenuStripDelete.Name = "contextMenuStripDelete";
-            this.contextMenuStripDelete.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStripDelete.Size = new System.Drawing.Size(108, 26);
             this.contextMenuStripDelete.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMenuStripDelete_MouseClick);
             // 
             // toolStripMenuItemDelete
             // 
             this.toolStripMenuItemDelete.Image = global::job.Properties.Resources.colt;
             this.toolStripMenuItemDelete.Name = "toolStripMenuItemDelete";
-            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItemDelete.Text = "Delete";
             // 
             // FrmInterview
