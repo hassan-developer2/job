@@ -181,5 +181,20 @@ namespace job
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void MDIParent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to leave?",
+                      "confirm", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    System.Windows.Forms.Application.Exit();
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+            }
+        }
     }
 }

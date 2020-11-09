@@ -42,6 +42,7 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jobApplyDetailReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyProfileReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abouTheDeveloperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.processingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.interviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,10 +50,9 @@
             this.initializeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.questionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkLabelClose = new System.Windows.Forms.LinkLabel();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.abouTheDeveloperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkLabelClose2 = new System.Windows.Forms.LinkLabel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +151,13 @@
             this.companyProfileReportToolStripMenuItem.Text = "company profile report";
             this.companyProfileReportToolStripMenuItem.Click += new System.EventHandler(this.companyProfileReportToolStripMenuItem_Click);
             // 
+            // abouTheDeveloperToolStripMenuItem
+            // 
+            this.abouTheDeveloperToolStripMenuItem.Name = "abouTheDeveloperToolStripMenuItem";
+            this.abouTheDeveloperToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abouTheDeveloperToolStripMenuItem.Text = "about the developer";
+            this.abouTheDeveloperToolStripMenuItem.Click += new System.EventHandler(this.abouTheDeveloperToolStripMenuItem_Click);
+            // 
             // interviewToolStripMenuItem
             // 
             this.interviewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -208,11 +215,16 @@
             this.linkLabelClose.Text = "Close";
             this.linkLabelClose.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelClose_LinkClicked);
             // 
-            // toolStripStatusLabel
+            // linkLabelClose2
             // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel.Text = "Status";
+            this.linkLabelClose2.AutoSize = true;
+            this.linkLabelClose2.Location = new System.Drawing.Point(504, 10);
+            this.linkLabelClose2.Name = "linkLabelClose2";
+            this.linkLabelClose2.Size = new System.Drawing.Size(58, 13);
+            this.linkLabelClose2.TabIndex = 7;
+            this.linkLabelClose2.TabStop = true;
+            this.linkLabelClose2.Text = "CLose app";
+            this.linkLabelClose2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelClose2_LinkClicked);
             // 
             // statusStrip
             // 
@@ -226,23 +238,11 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // abouTheDeveloperToolStripMenuItem
+            // toolStripStatusLabel
             // 
-            this.abouTheDeveloperToolStripMenuItem.Name = "abouTheDeveloperToolStripMenuItem";
-            this.abouTheDeveloperToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.abouTheDeveloperToolStripMenuItem.Text = "about the developer";
-            this.abouTheDeveloperToolStripMenuItem.Click += new System.EventHandler(this.abouTheDeveloperToolStripMenuItem_Click);
-            // 
-            // linkLabelClose2
-            // 
-            this.linkLabelClose2.AutoSize = true;
-            this.linkLabelClose2.Location = new System.Drawing.Point(504, 10);
-            this.linkLabelClose2.Name = "linkLabelClose2";
-            this.linkLabelClose2.Size = new System.Drawing.Size(58, 13);
-            this.linkLabelClose2.TabIndex = 7;
-            this.linkLabelClose2.TabStop = true;
-            this.linkLabelClose2.Text = "CLose app";
-            this.linkLabelClose2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelClose2_LinkClicked);
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Text = "Status";
             // 
             // MDIParent
             // 
@@ -258,6 +258,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Job";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDIParent_FormClosing);
             this.Load += new System.EventHandler(this.MDIParent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
