@@ -48,12 +48,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboQuestion = new System.Windows.Forms.ComboBox();
             this.dataGridViewQuestion = new System.Windows.Forms.DataGridView();
-            this.notifyIconRightClick = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripDelete = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIconRightClick = new System.Windows.Forms.NotifyIcon(this.components);
+            this.groupBoxContent = new System.Windows.Forms.GroupBox();
             this.groupBoxButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestion)).BeginInit();
             this.contextMenuStripDelete.SuspendLayout();
+            this.groupBoxContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -61,7 +63,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAdd.Location = new System.Drawing.Point(736, 292);
+            this.btnAdd.Location = new System.Drawing.Point(723, 149);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 56);
             this.btnAdd.TabIndex = 81;
@@ -74,13 +76,14 @@
             // 
             this.btnGetData.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGetData.BackgroundImage")));
             this.btnGetData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGetData.Location = new System.Drawing.Point(390, 154);
+            this.btnGetData.Location = new System.Drawing.Point(377, 11);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(106, 92);
             this.btnGetData.TabIndex = 80;
             this.btnGetData.Text = "get data";
             this.btnGetData.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGetData.UseVisualStyleBackColor = true;
+            this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
             // groupBoxButtons
             // 
@@ -122,6 +125,7 @@
             this.btnDelete.Text = "&Delete";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -147,6 +151,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnNew
             // 
@@ -178,7 +183,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 167);
+            this.label1.Location = new System.Drawing.Point(22, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 82;
@@ -187,7 +192,7 @@
             // cboId
             // 
             this.cboId.FormattingEnabled = true;
-            this.cboId.Location = new System.Drawing.Point(100, 167);
+            this.cboId.Location = new System.Drawing.Point(87, 24);
             this.cboId.Name = "cboId";
             this.cboId.Size = new System.Drawing.Size(275, 21);
             this.cboId.TabIndex = 83;
@@ -195,7 +200,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 235);
+            this.label2.Location = new System.Drawing.Point(12, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 84;
@@ -203,7 +208,7 @@
             // 
             // dtpTransDate
             // 
-            this.dtpTransDate.Location = new System.Drawing.Point(100, 235);
+            this.dtpTransDate.Location = new System.Drawing.Point(87, 92);
             this.dtpTransDate.Name = "dtpTransDate";
             this.dtpTransDate.Size = new System.Drawing.Size(200, 20);
             this.dtpTransDate.TabIndex = 85;
@@ -211,7 +216,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 323);
+            this.label3.Location = new System.Drawing.Point(15, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 86;
@@ -221,7 +226,7 @@
             // 
             this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(100, 323);
+            this.cboCompany.Location = new System.Drawing.Point(87, 180);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(200, 21);
             this.cboCompany.TabIndex = 87;
@@ -229,7 +234,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(328, 327);
+            this.label4.Location = new System.Drawing.Point(315, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 88;
@@ -239,7 +244,7 @@
             // 
             this.cboQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboQuestion.FormattingEnabled = true;
-            this.cboQuestion.Location = new System.Drawing.Point(390, 327);
+            this.cboQuestion.Location = new System.Drawing.Point(377, 184);
             this.cboQuestion.Name = "cboQuestion";
             this.cboQuestion.Size = new System.Drawing.Size(314, 21);
             this.cboQuestion.TabIndex = 89;
@@ -248,17 +253,10 @@
             // 
             this.dataGridViewQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewQuestion.ContextMenuStrip = this.contextMenuStripDelete;
-            this.dataGridViewQuestion.Location = new System.Drawing.Point(100, 483);
+            this.dataGridViewQuestion.Location = new System.Drawing.Point(87, 324);
             this.dataGridViewQuestion.Name = "dataGridViewQuestion";
-            this.dataGridViewQuestion.Size = new System.Drawing.Size(603, 189);
+            this.dataGridViewQuestion.Size = new System.Drawing.Size(676, 189);
             this.dataGridViewQuestion.TabIndex = 90;
-            // 
-            // notifyIconRightClick
-            // 
-            this.notifyIconRightClick.ContextMenuStrip = this.contextMenuStripDelete;
-            this.notifyIconRightClick.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconRightClick.Icon")));
-            this.notifyIconRightClick.Text = "notifyIcon1";
-            this.notifyIconRightClick.Visible = true;
             // 
             // contextMenuStripDelete
             // 
@@ -275,23 +273,41 @@
             this.toolStripMenuItemDelete.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItemDelete.Text = "Delete";
             // 
+            // notifyIconRightClick
+            // 
+            this.notifyIconRightClick.ContextMenuStrip = this.contextMenuStripDelete;
+            this.notifyIconRightClick.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconRightClick.Icon")));
+            this.notifyIconRightClick.Text = "notifyIcon1";
+            this.notifyIconRightClick.Visible = true;
+            // 
+            // groupBoxContent
+            // 
+            this.groupBoxContent.BackColor = System.Drawing.Color.DimGray;
+            this.groupBoxContent.Controls.Add(this.cboQuestion);
+            this.groupBoxContent.Controls.Add(this.label4);
+            this.groupBoxContent.Controls.Add(this.dataGridViewQuestion);
+            this.groupBoxContent.Controls.Add(this.cboCompany);
+            this.groupBoxContent.Controls.Add(this.label3);
+            this.groupBoxContent.Controls.Add(this.dtpTransDate);
+            this.groupBoxContent.Controls.Add(this.label2);
+            this.groupBoxContent.Controls.Add(this.cboId);
+            this.groupBoxContent.Controls.Add(this.label1);
+            this.groupBoxContent.Controls.Add(this.btnAdd);
+            this.groupBoxContent.Controls.Add(this.btnGetData);
+            this.groupBoxContent.Location = new System.Drawing.Point(13, 143);
+            this.groupBoxContent.Name = "groupBoxContent";
+            this.groupBoxContent.Size = new System.Drawing.Size(818, 562);
+            this.groupBoxContent.TabIndex = 92;
+            this.groupBoxContent.TabStop = false;
+            this.groupBoxContent.Text = "content";
+            // 
             // FrmInterview
             // 
             this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 694);
-            this.Controls.Add(this.dataGridViewQuestion);
-            this.Controls.Add(this.cboQuestion);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cboCompany);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpTransDate);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cboId);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnGetData);
+            this.ClientSize = new System.Drawing.Size(836, 731);
+            this.Controls.Add(this.groupBoxContent);
             this.Controls.Add(this.groupBoxButtons);
             this.IsMdiContainer = true;
             this.Name = "FrmInterview";
@@ -301,8 +317,9 @@
             this.groupBoxButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestion)).EndInit();
             this.contextMenuStripDelete.ResumeLayout(false);
+            this.groupBoxContent.ResumeLayout(false);
+            this.groupBoxContent.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -318,16 +335,17 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpTransDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboQuestion;
-        private System.Windows.Forms.DataGridView dataGridViewQuestion;
         private System.Windows.Forms.NotifyIcon notifyIconRightClick;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripDelete;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDelete;
+        public System.Windows.Forms.ComboBox cboId;
+        public System.Windows.Forms.DataGridView dataGridViewQuestion;
+        public System.Windows.Forms.GroupBox groupBoxContent;
     }
 }
