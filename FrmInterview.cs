@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using job.search;
 
 namespace job
 {
@@ -38,6 +39,7 @@ namespace job
                 cboQuestion.DisplayMember = "question1";
                 cboQuestion.ValueMember = "Id";
             }
+            groupBoxContent.Enabled = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -131,6 +133,7 @@ namespace job
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            groupBoxContent.Enabled = true;
             var random = System.Guid.NewGuid().ToString().Replace("-", null);
             cboId.Text = random;
             dataGridViewQuestion.Refresh();
@@ -167,6 +170,96 @@ namespace job
             {
 
                 MessageBox.Show("Error " + ex.Message);
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            FrmSearchInterview frm = new FrmSearchInterview();
+            frm.Show();
+        }
+
+        private void btnGetData_Click(object sender, EventArgs e)
+        {
+            
+                if (cboId.Text == "")
+                {
+                    MessageBox.Show("select a value first and then click get data");
+                    return;
+                }
+                string id = cboId.Text;
+                DataClassesJobDataContext db = new DataClassesJobDataContext();
+
+                var queryResults =
+                    from inter in db.Interviews
+                    where inter.Id == cboId.Text
+                    select new { inter };
+                if (queryResults.Any())
+                {
+                    dtpTransDate.Text = queryResults.FirstOrDefault().inter.TransDate.ToString();
+                    cboCompany.Text = queryResults.FirstOrDefault().inter.CompanyName;
+                    // txtName.Text = db.petitioners.Where(p => p.id == id).FirstOrDefault().name;   //works fine
+                }
+                else
+                {
+                    MessageBox.Show("no data found", "alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            // poopulate data grid view
+            var queryResultsDetail = from detail in db.InterviewDetails
+                                     where detail.InterviewId==cboId.Text
+                                     select detail;
+            if (queryResultsDetail.Any())
+            {
+                dataGridViewQuestion.DataSource = queryResultsDetail;
+
+            }
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete record?",
+                       "confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    deleteInterview();
+                    break;
+                case DialogResult.No:
+                   
+                    break;
+            }
+            groupBoxContent.Enabled = false;
+        }
+
+        private void deleteInterview()
+        {
+            try
+            {
+                using (var context = new DataClassesJobDataContext())
+                {
+                    var savedInt = context.Interviews.Where(r => r.Id == cboId.Text);
+                    if (savedInt.Any())
+                    {
+                        var interview = savedInt.First();
+                        interview.Id = cboId.Text;
+                        interview.TransDate = dtpTransDate.Value;
+                        interview.CompanyId = Convert.ToInt32(cboCompany.SelectedValue);
+                        interview.CompanyName = cboCompany.Text;
+                        context.Interviews.DeleteOnSubmit(interview);
+
+                        context.SubmitChanges();
+                        MessageBox.Show("Record successfully deleted !");
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
             }
         }
     }
