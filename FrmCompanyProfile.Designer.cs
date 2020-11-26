@@ -43,14 +43,16 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.groupBoxFields = new System.Windows.Forms.GroupBox();
             this.groupBoxButtons.SuspendLayout();
+            this.groupBoxFields.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGetData
             // 
             this.btnGetData.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGetData.BackgroundImage")));
             this.btnGetData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGetData.Location = new System.Drawing.Point(382, 162);
+            this.btnGetData.Location = new System.Drawing.Point(375, 18);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(106, 92);
             this.btnGetData.TabIndex = 66;
@@ -159,7 +161,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 175);
+            this.label1.Location = new System.Drawing.Point(52, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 67;
@@ -169,7 +171,7 @@
             // 
             this.cboId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboId.FormattingEnabled = true;
-            this.cboId.Location = new System.Drawing.Point(106, 166);
+            this.cboId.Location = new System.Drawing.Point(99, 22);
             this.cboId.Name = "cboId";
             this.cboId.Size = new System.Drawing.Size(156, 21);
             this.cboId.TabIndex = 68;
@@ -177,7 +179,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 221);
+            this.label2.Location = new System.Drawing.Point(5, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 69;
@@ -185,7 +187,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(106, 213);
+            this.txtName.Location = new System.Drawing.Point(99, 69);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(156, 20);
             this.txtName.TabIndex = 70;
@@ -193,7 +195,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 271);
+            this.label3.Location = new System.Drawing.Point(8, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 71;
@@ -201,31 +203,44 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(106, 271);
+            this.txtDescription.Location = new System.Drawing.Point(99, 127);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(270, 20);
             this.txtDescription.TabIndex = 72;
+            // 
+            // groupBoxFields
+            // 
+            this.groupBoxFields.BackColor = System.Drawing.Color.Gray;
+            this.groupBoxFields.Controls.Add(this.txtDescription);
+            this.groupBoxFields.Controls.Add(this.label3);
+            this.groupBoxFields.Controls.Add(this.txtName);
+            this.groupBoxFields.Controls.Add(this.label2);
+            this.groupBoxFields.Controls.Add(this.cboId);
+            this.groupBoxFields.Controls.Add(this.label1);
+            this.groupBoxFields.Controls.Add(this.btnGetData);
+            this.groupBoxFields.Location = new System.Drawing.Point(45, 143);
+            this.groupBoxFields.Name = "groupBoxFields";
+            this.groupBoxFields.Size = new System.Drawing.Size(695, 158);
+            this.groupBoxFields.TabIndex = 74;
+            this.groupBoxFields.TabStop = false;
+            this.groupBoxFields.Text = "fields";
             // 
             // FrmCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 313);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cboId);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnGetData);
+            this.Controls.Add(this.groupBoxFields);
             this.Controls.Add(this.groupBoxButtons);
             this.IsMdiContainer = true;
             this.Name = "FrmCompanyProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Company Profile";
+            this.Load += new System.EventHandler(this.FrmCompanyProfile_Load);
             this.groupBoxButtons.ResumeLayout(false);
+            this.groupBoxFields.ResumeLayout(false);
+            this.groupBoxFields.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -245,5 +260,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescription;
         public System.Windows.Forms.ComboBox cboId;
+        public System.Windows.Forms.GroupBox groupBoxFields;
     }
 }

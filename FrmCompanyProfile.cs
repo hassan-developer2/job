@@ -20,6 +20,7 @@ namespace job
         private void btnNew_Click(object sender, EventArgs e)
         {
             clearFields();
+            groupBoxFields.Enabled = true;
         }
 
         private void clearFields()
@@ -51,6 +52,7 @@ namespace job
                 db.SubmitChanges();
                 MessageBox.Show("record saved!");
                 clearFields();
+                groupBoxFields.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -139,6 +141,11 @@ namespace job
                     clearFields();
                 }
             }
+        }
+
+        private void FrmCompanyProfile_Load(object sender, EventArgs e)
+        {
+            groupBoxFields.Enabled = false;
         }
     }
 }
